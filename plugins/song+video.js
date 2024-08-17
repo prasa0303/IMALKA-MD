@@ -27,7 +27,7 @@ views: ${data.views}
 
 MADE BY IMALKA-HANSAMAL❤️
   `
-await conn.sendmassage(from,{image:{url:data.thumbnail},caption:desc},{quoted:mek});
+await conn.sendmassage(from,{image:{url: data.thumbnail},caption:desc},{quoted:mek});
                     
 //download audio 
 
@@ -35,7 +35,7 @@ let down = await fb.yta(url)
 let downloadUrl = down.dl_url
 
 //send audio massage    
-await conn.sendmassage(from,{audio: {url :downloadUrl},mimetype:"audio/mpeg"},{quoted:mek})
+await conn.sendmassage(from,{audio: {url:downloadUrl},mimetype:"audio/mpeg"},{quoted:mek})
 
 
 
