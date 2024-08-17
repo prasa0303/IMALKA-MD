@@ -18,14 +18,14 @@ try{
   let desc = ` 
   🎶 HANSAMAL-MD YT SONG DOWNLOADER 🎶
 
-  titile: ${data.titile}
-  description: ${data.description}
-  time: ${data.timestamps}
-  ago: ${data.ago}
-  views: ${data.views}
+   titile: ${data.titile}
+   description: ${data.description}
+   time: ${data.timestamps}
+   ago: ${data.ago}
+   views: ${data.views}
 
 
-  MADE BY IMALKA-HANSAMAL❤️
+   MADE BY IMALKA-HANSAMAL❤️
   `
 await conn.sendmassage(from,{image:{url:data.thumbnail},caption:desc},{quoted:mek});
                     
@@ -36,6 +36,52 @@ let downloadUrl = down.dl_url
 
 //send audio massage    
 await conn.sendmassage(from,{audio: {url :downloadUrl},mimetype:"audio/mpeg"},{quoted:mek})
+
+}catch(e){
+  console.log(e)
+  reply('${e}')
+}
+
+    
+    
+    
+    
+    
+    //=======video-dl=======
+
+cmd({
+    pattern: "video",
+    desc: "download videos",
+    category: "download",
+    filename: __filename
+},
+async(conn, mek, m,{from, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply}) => {
+try{
+  if(!q) return reply("PLEASE GIVE ME VIDEO NAME OR YT LINK")
+  const search = await yts(q)
+  const data = search.videos[0];
+  const url = data.url
+  let desc = ` 
+  🎶 HANSAMAL-MD YT VIDEO DOWNLOADER 🎶
+
+   titile: ${data.titile}
+   description: ${data.description}
+   time: ${data.timestamps}
+   ago: ${data.ago}
+   views: ${data.views}
+
+
+   MADE BY IMALKA-HANSAMAL❤️
+  `
+await conn.sendmassage(from,{image:{url:data.thumbnail},caption:desc},{quoted:mek});
+                    
+//download video
+
+let down = await fb.ytv(url)
+let downloadUrl = down.dl_url
+
+//send video massage    
+await conn.sendmassage(from,{video: {url :downloadUrl},mimetype:"video/mp4"},{quoted:mek})
 
 }catch(e){
   console.log(e)
