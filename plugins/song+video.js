@@ -43,7 +43,7 @@ await conn.sendmassage(from,{audio: {url :downloadUrl},mimetype:"audio/mp3"},{qu
 
 }catch(e){
   console.log(e)
-  reply('${e}')
+  reply(`${e}`)
 }
 })
 
