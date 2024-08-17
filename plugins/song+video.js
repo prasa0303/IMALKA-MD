@@ -35,7 +35,7 @@ let down = await fb.yta(url)
 let downloadUrl = down.dl_url
 
 //send audio massage    
-await conn.sendmassage(from,{audio: {url :downloadUrl},mimetype:"audio/mp3"},{quoted:mek})
+await conn.sendmassage(from,{audio: {url :downloadUrl},mimetype:"audio/mpeg"},{quoted:mek})
 
 
 
