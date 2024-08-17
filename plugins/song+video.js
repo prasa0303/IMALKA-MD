@@ -16,7 +16,7 @@ try{
   const data = search.videos[0];
   const url = data.url
   let desc = ` 
-  🎶*HANSAMAL-MD YT SONG DOWNLOADER*🎶
+  🎶 HANSAMAL-MD YT SONG DOWNLOADER 🎶
 
   titile: ${data.titile}
   description: ${data.description}
@@ -25,12 +25,17 @@ try{
   views: ${data.views}
 
 
-  MADE BY IMALKA-HANSAMAL
-  ´ 
-await conn.sendmassage(from,{image:{url.data.thumbnail}})
+  MADE BY IMALKA-HANSAMAL❤️
+  `
+await conn.sendmassage(from,{image:{url:data.thumbnail},caption:desc},{quoted:mek});
                     
+//download audio 
 
- 
+let down = await fb.yta(url)
+let downloadUrl = down.dl_url
+
+//send audio massage    
+await conn.sendmassage(from,{audio: {url :downloadUrl},mimetype:"audio/mpeg"},{quoted:mek})
 
 }catch(e){
   console.log(e)
