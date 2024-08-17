@@ -11,7 +11,7 @@ cmd({
 },
 async(conn, mek, m,{from, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply}) => {
 try{
-  if(!q) return reply("Please give song name or yt url")
+  if(!q) return reply("PLEASE GIVE ME SONG NAME OR YT URL")
   const search = await yts(q)
   const data = search.videos[0];
   const url = data.url
@@ -26,7 +26,7 @@ views: ${data.views}
 
 
 MADE BY IMALKA-HANSAMAL❤️
-  `
+`
 await conn.sendmassage(from,{image:{url: data.thumbnail},caption:desc},{quoted:mek});
                     
 //download audio 
