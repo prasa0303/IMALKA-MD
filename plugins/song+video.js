@@ -31,7 +31,7 @@ await conn.sendmassage(from,{image:{url: data.thumbnail},caption:desc},{quoted:m
                     
 //download audio 
 
-let down = await fb.yta(url)
+let down = await fg.yta(url)
 let downloadUrl = down.dl_url
 
 //send audio massage    
