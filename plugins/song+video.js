@@ -45,10 +45,7 @@ await conn.sendmassage(from,{audio: {url :downloadUrl},mimetype:"audio/mpeg"},{q
   console.log(e)
   reply('${e}')
 }
-
-
-
-)}
+})
 
  
     
