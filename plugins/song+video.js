@@ -16,7 +16,7 @@ try{
   const data = search.videos[0];
   const url = data.url
   let desc = ` 
-  🎶 ༒HANSAMAL-MD YT SONG DOWNLOADER📍🎶
+  🎶*HANSAMAL-MD YT SONG DOWNLOADER*🎶
 
   titile: ${data.titile}
   description: ${data.description}
@@ -26,8 +26,9 @@ try{
 
 
   MADE BY IMALKA-HANSAMAL
-  ´
-  
+  ´ 
+await conn.sendmassage(from,{image:{url.data.thumbnail}})
+                    
 
  
 
