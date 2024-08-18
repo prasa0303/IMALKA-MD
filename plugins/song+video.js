@@ -36,7 +36,6 @@ let downloadUrl = down.dl_url
 
 //send audio + document massage    
 await conn.sendMessage(from,{audio: {url:downloadUrl},mimetype:"audio/mpeg"},{quoted:mek})
-await conn.sendMessage(from,{document: {url:downloadUrl},mimetype:"audio/mpeg}",{filename:data.title+ ".mp3" caption:"MADE BY HANSAMAL"},{quoted:mek})
 
 
 :
