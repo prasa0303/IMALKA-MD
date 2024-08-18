@@ -34,8 +34,54 @@ await conn.sendMessage(from,{image:{url: data.thumbnail},caption:desc},{quoted:m
 let down = await fg.yta(url)
 let downloadUrl = down.dl_url
 
-//send audio massage    
+//send audio + document massage    
 await conn.sendMessage(from,{audio: {url:downloadUrl},mimetype:"audio/mpeg"},{quoted:mek})
+await conn.sendMessage(from,{document: {url:downloadUrl},mimetype:"audio/mpeg",filename:data.title + ".mp3",caption:"MADE BY HANSAMAL"},{quoted:mek})
+
+
+:
+}catch(e){
+  console.log(e)
+  reply(`${e}`)
+}
+})
+
+//=======video-dl=======
+
+cmd({
+    pattern: "video",
+    desc: "download videos",
+    category: "download",
+    filename: __filename
+},
+async(conn, mek, m,{from, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply}) => {
+try{
+  if(!q) return reply("PLEASE GIVE ME SONG NAME OR YT URL")
+  const search = await yts(q)
+  const data = search.videos[0];
+  const url = data.url
+  let desc = ` 
+🎶 HANSAMAL-MD YT VIDEO DOWNLOADER 🎶
+
+titile: ${data.titile}
+description: ${data.description}
+time: ${data.timestamps}
+ago: ${data.ago}
+views: ${data.views}
+
+
+MADE BY IMALKA-HANSAMAL❤️
+`
+await conn.sendMessage(from,{image:{url: data.thumbnail},caption:desc},{quoted:mek});
+                    
+//download video
+
+let down = await fg.ytv(url)
+let downloadUrl = down.dl_url
+
+//send video + document massage    
+await conn.sendMessage(from,{video: {url:downloadUrl},mimetype:"video/mp4"},{quoted:mek})
+await conn.sendMessage(from,{document: {url:downloadUrl},mimetype:"video/mp4",filename:data.title + ".mp4",caption:"MADE BY HANSAMAL},{quoted:mek})
 
 
 
@@ -46,8 +92,3 @@ await conn.sendMessage(from,{audio: {url:downloadUrl},mimetype:"audio/mpeg"},{qu
   reply(`${e}`)
 }
 })
-
- 
-    
-    
-    
