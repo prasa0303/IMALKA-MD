@@ -59,11 +59,9 @@
 <hr>
 
 ## DEPLOYMENT METHODS
-3. ## Deploy to Koyeb ↓
 
-<a href="https://app.koyeb.com/services/deploy/?type=git&repository=github.com%2Fcobrs11%2FHANSAMAL-MD&branch=main&name=hansamal-md&builder=dockerfile&env%5BAUTO_BLOCK=false%5D=&env%5BSESSION_ID%5D=your%20sessionid%20here&env%5BMODE%5D=public&env=%5BAUTO_READ%5D%3Dfalse&env%5BAUTO_STATUS_SEEN%5D=true" target="blank"><img align="center" src="https://i.imgur.com/PNoLtFq.png" width="300" height="100" alt="Deploy bot"/></a>
 
-4. ## Deploy to RENDER ↓
+3. ## Deploy to RENDER ↓
 
 <a href="https://dashboard.render.com/" target="blank"><img align="center" src="https://telegra.ph/file/c15e952f017c10e12f431.jpg" width="100" height="20" alt="Deploy bot"/></a>
 
@@ -79,4 +77,4 @@
  </p>
     <p align="center">
 <a href="https://git.io/typing-svg"><img src="https://readme-typing-svg.demolab.com?font=EB+Garamond&weight=800&size=28&duration=4000&pause=1000&random=false&width=435&lines=THANKS+ALL+USE+MY+BOT;HANSAMAL-MD" alt="Typing SVG" /></a>
----
+
