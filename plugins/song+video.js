@@ -16,16 +16,16 @@ try{
   const data = search.videos[0];
   const url = data.url
   let desc = ` 
-🎶 HANSAMAL-MD YT SONG DOWNLOADER 🎶
+╭──═❮ 🎶*HANSAMAL-MD SONG DOWNLOADER*❯═─┈•
+│✑ *Title:* ${data.title}
+│✑ *Uploader:* ${data.author.name}
+│✑ *Time* ${data.timestamps}
+│✑ *Ago:* ${data.ago}
+|✑ *Views:* ${data.views}
+╰────────────────❃
 
-TITLE: ${data.title}
-DESCRIPTION: ${data.description}
-TIME: ${data.timestamps}
-AGO: ${data.ago}
-VIEWS: ${data.views}
 
-
-MADE BY IMALKA-HANSAMAL❤️
+📍*MADE BY IMALKA-HANSAMAL*👨‍💻
 `
 await conn.sendMessage(from,{image:{url: data.thumbnail},caption:desc},{quoted:mek});
                     
@@ -62,7 +62,6 @@ try{
   const data = search.videos[0];
   const url = data.url
   let desc = ` 
- 
 ╭──═❮ 📍*HANSAMAL-MD VIDEO DOWNLOADER*📱❯═─┈•
 │✑ *Title:* ${data.title}
 │✑ *Uploader:* ${data.author.name}
@@ -72,7 +71,7 @@ try{
 ╰────────────────❃
 
 
-MADE BY IMALKA-HANSAMAL❤️
+📍*MADE BY IMALKA-HANSAMAL*👨‍💻
 `
 await conn.sendMessage(from,{image:{url: data.thumbnail},caption:desc},{quoted:mek});
                     
