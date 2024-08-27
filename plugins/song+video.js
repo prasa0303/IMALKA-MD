@@ -17,11 +17,11 @@ try{
   const url = data.url
   let desc = ` 
 ╭──═❮ *🎶HANSAMAL-MD SONG DOWNLOADER📱*❯═─┈•
-|✑ *`Title:`* ${data.title}
-|✑ *`Uploader:`* ${data.author.name}
-|✑ *`Time:`* ${data.timestamp}
-|✑ *`Ago:`* ${data.ago}
-|✑ *`Views:`* ${data.views}
+|✑ *Title:* ${data.title}
+|✑ *Uploader:* ${data.author.name}
+|✑ *Time:* ${data.timestamp}
+|✑ *Ago:* ${data.ago}
+|✑ *Views:* ${data.views}
 ╰────────────────❃
 
 
@@ -63,11 +63,11 @@ try{
   const url = data.url
   let desc = ` 
 ╭──═❮ *🖥️HANSAMAL-MD VIDEO DOWNLOADER📱*❯═─┈•
-|✑ *`Title:`* ${data.title}
-|✑ *`Uploader:`* ${data.author.name}
-|✑ *`Time:`* ${data.timestamp}
+|✑ *Title:* ${data.title}
+|✑ *Uploader:* ${data.author.name}
+|✑ *Time:* ${data.timestamp}
 |✑ *`Ago:`* ${data.ago}
-|✑ *`Views:`* ${data.views}
+|✑ *Views:* ${data.views}
 ╰────────────────❃
 
 
@@ -80,7 +80,7 @@ await conn.sendMessage(from,{image:{url: data.thumbnail},caption:desc},{quoted:m
 let down = await fg.ytv(url)
 let downloadUrl = down.dl_url
 
-//send audio message    
+//send video message    
 await conn.sendMessage(from,{video: {url:downloadUrl},mimetype:"video/mp4"},{quoted:mek})
 
 
