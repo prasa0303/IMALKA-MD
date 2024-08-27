@@ -20,7 +20,7 @@ try{
 ╭──═❮ *🎶HANSAMAL-MD SONG DOWNLOADER📱*❯═─┈•
 │✑ *Title:* ${data.title}
 │✑ *Uploader:* ${data.author.name}
-│✑ *Time:* ${data.timestamps}
+│✑ *Time:* ${data.timestamp}
 │✑ *Ago:* ${data.ago}
 |✑ *Views:* ${data.views}
 ╰────────────────❃
@@ -66,7 +66,7 @@ try{
 ╭──═❮ *🖥️HANSAMAL-MD VIDEO DOWNLOADER📱*❯═─┈•
 │✑ *Title:* ${data.title}
 │✑ *Uploader:* ${data.author.name}
-│✑ *Time:* ${data.timestamps}
+│✑ *Time:* ${data.timestamp}
 │✑ *Ago:* ${data.ago}
 |✑ *Views:* ${data.views}
 ╰────────────────❃
