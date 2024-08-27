@@ -1,6 +1,6 @@
 const {cmd , commands} = require('../command')
-const fg = require ( 'api-dylux' )
-const yts = require ( 'yt-search' ) 
+const fg = require ( 'api - dylux' )
+const yts = require ( ' yt-search' ) 
 
 
 cmd({
@@ -11,32 +11,31 @@ cmd({
 },
 async(conn, mek, m,{from, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply}) => {
 try{
-  if(!q) return reply("PLEASE GIVE ME SONG NAME OR YT URL")
+  if(!q) return reply("PLEASE GIVE ME SONG NAME OR YT LINK")
   const search = await yts(q)
   const data = search.videos[0];
   const url = data.url
   let desc = ` 
- 
-╭──═❮ *🎶HANSAMAL-MD SONG DOWNLOADER📱*❯═─┈•
-│✑ *Title:* ${data.title}
-│✑ *Uploader:* ${data.author.name}
-│✑ *Time:* ${data.timestamp}
-│✑ *Ago:* ${data.ago}
-|✑ *Views:* ${data.views}
-╰────────────────❃
+  🎶 HANSAMAL-MD YT SONG DOWNLOADER 🎶
+
+   titile: ${data.titile}
+   description: ${data.description}
+   time: ${data.timestamp}
+   ago: ${data.ago}
+   views: ${data.views}
 
 
-*📍MADE BY IMALKA-HANSAMAL*
-`
-await conn.sendMessage(from,{image:{url: data.thumbnail},caption:desc},{quoted:mek});
+   MADE BY IMALKA-HANSAMAL❤️
+  `
+await conn.sendmassage(from,{image:{url:data.thumbnail},caption:desc},{quoted:mek});
                     
 //download audio 
 
-let down = await fg.yta(url)
+let down = await fb.yta(url)
 let downloadUrl = down.dl_url
 
-//send audio message    
-await conn.sendMessage(from,{audio: {url:downloadUrl},mimetype:"audio/mpeg"},{quoted:mek})
+//send audio massage    
+await conn.sendmassage(from,{audio: {url :downloadUrl},mimetype:"audio/mpeg"},{quoted:mek})
 
 
 
@@ -44,51 +43,11 @@ await conn.sendMessage(from,{audio: {url:downloadUrl},mimetype:"audio/mpeg"},{qu
 
 }catch(e){
   console.log(e)
-  reply(`${e}`)
+  reply('${e}')
 }
 })
 
-//===========video-dl============
-
-cmd({
-    pattern: "video",
-    desc: "download videos",
-    category: "download",
-    filename: __filename
-},
-async(conn, mek, m,{from, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply}) => {
-try{
-  if(!q) return reply("PLEASE GIVE ME VIDEO NAME OR YT URL")
-  const search = await yts(q)
-  const data = search.videos[0];
-  const url = data.url
-  let desc = ` 
-╭──═❮ *🖥️HANSAMAL-MD VIDEO DOWNLOADER📱*❯═─┈•
-│✑ *Title:* ${data.title}
-│✑ *Uploader:* ${data.author.name}
-│✑ *Time:* ${data.timestamp}
-│✑ *Ago:* ${data.ago}
-|✑ *Views:* ${data.views}
-╰────────────────❃
-
-*📍MADE BY IMALKA-HANSAMAL*
-`
-await conn.sendMessage(from,{image:{url: data.thumbnail},caption:desc},{quoted:mek});
-                    
-//download video 
-
-let down = await fg.ytv(url)
-let downloadUrl = down.dl_url
-
-//send video message    
-await conn.sendMessage(from,{video: {url:downloadUrl},mimetype:"video/mp4"},{quoted:mek})
-
-
-
-
-
-}catch(e){
-  console.log(e)
-  reply(`${e}`)
-}
-})
+ 
+    
+    
+    
