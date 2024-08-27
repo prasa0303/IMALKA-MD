@@ -64,8 +64,8 @@ try{
   let desc = ` 
  
 ╭──═❮ 📍*HANSAMAL-MD VIDEO DOWNLOADER*📱❯═─┈•
-│✑ *Title:* ${videoinfo.title}
-│✑ *Uploader:* ${videoInfo.author.name}
+│✑ *Title:* ${data.title}
+│✑ *Uploader:* ${data.author.name}
 │✑ *Time* ${data.timestamps}
 │✑ *Ago:* ${data.ago}
 |✑ *Views:* ${data.views}
