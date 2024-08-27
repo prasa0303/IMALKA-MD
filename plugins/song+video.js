@@ -17,13 +17,11 @@ try{
   const url = data.url
   let desc = ` 
 ╭──═❮ *🎶HANSAMAL-MD SONG DOWNLOADER📱*❯═─┈•
-|
-│✑ *Title:* ${data.title}
-│✑ *Uploader:* ${data.author.name}
-│✑ *Time:* ${data.time}
-│✑ *Ago:* ${data.ago}
-|✑ *Views:* ${data.views}
-|
+|✑ *`Title:`* ${data.title}
+|✑ *`Uploader:`* ${data.author.name}
+|✑ *`Time:`* ${data.timestamp}
+|✑ *`Ago:`* ${data.ago}
+|✑ *`Views:`* ${data.views}
 ╰────────────────❃
 
 
@@ -65,13 +63,11 @@ try{
   const url = data.url
   let desc = ` 
 ╭──═❮ *🖥️HANSAMAL-MD VIDEO DOWNLOADER📱*❯═─┈•
-|
-│✑ *Title:* ${data.title}
-│✑ *Uploader:* ${data.author.name}
-│✑ *Time:* ${data.time}
-│✑ *Ago:* ${data.ago}
-|✑ *Views:* ${data.views}
-|
+|✑ *`Title:`* ${data.title}
+|✑ *`Uploader:`* ${data.author.name}
+|✑ *`Time:`* ${data.timestamp}
+|✑ *`Ago:`* ${data.ago}
+|✑ *`Views:`* ${data.views}
 ╰────────────────❃
 
 
