@@ -63,9 +63,9 @@ try{
   const url = data.url
   let desc = ` 
  
-╭──═❮ *HANSAMAL-MD YOUTUBE VIDEO DOWNLOADER* 👨‍💻 ❯═─┈•
-│✑ *Title:* ${data.title}
-│✑ *Description:* ${data.description}
+╭──═❮ 📍*HANSAMAL-MD VIDEO DOWNLOADER*📱❯═─┈•
+│✑ *Title:* ${videoinfo.title}
+│✑ *Uploader:* ${videoInfo.author.name}
 │✑ *Time* ${data.timestamps}
 │✑ *Ago:* ${data.ago}
 |✑ *Views:* ${data.views}
