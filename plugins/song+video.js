@@ -18,11 +18,11 @@ try{
   let desc = ` 
 🎶 HANSAMAL-MD YT SONG DOWNLOADER 🎶
 
-titile: ${data.title}
-description: ${data.description}
-time: ${data.timestamps}
-ago: ${data.ago}
-views: ${data.views}
+TITLE: ${data.title}
+DESCRIPTION: ${data.description}
+TIME: ${data.timestamps}
+AGO: ${data.ago}
+VIEWS: ${data.views}
 
 
 MADE BY IMALKA-HANSAMAL❤️
@@ -62,13 +62,14 @@ try{
   const data = search.videos[0];
   const url = data.url
   let desc = ` 
- ▶ HANSAMAL-MD YT VIDEO DOWNLOADER 📱
-
-titile: ${data.title}
-description: ${data.description}
-time: ${data.timestamps}
-ago: ${data.ago}
-views: ${data.views}
+ 
+╭──═❮ *HANSAMAL-MD YOUTUBE VIDEO DOWNLOADER* 👨‍💻 ❯═─┈•
+│✑ *Title:* ${data.title}
+│✑ *Description:* ${data.description}
+│✑ *Time* ${data.timestamps}
+│✑ *Ago:* ${data.ago}
+|✑ *Views:* ${data.views}
+╰────────────────❃
 
 
 MADE BY IMALKA-HANSAMAL❤️
