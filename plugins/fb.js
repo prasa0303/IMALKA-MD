@@ -3,7 +3,7 @@ const config = require('../config')
 const { cmd, commands } = require('../command')
 
 //====HANSAMAL-MD=======
-let cap = 'Simple Wa-Bot 💫'
+let cap = 'HANSAMAL-MD 👨‍💻'
 
 // <========FETCH API URL========>
 let baseUrl;
