@@ -1,6 +1,5 @@
-const config = require('../config')
+const {readEnv} = require('../lib/database')
 const {cmd , commands} = require('../command')
-const { fetchJson } = require('../lib/functions') 
 
 cmd({
     pattern: "menu",
@@ -10,33 +9,54 @@ cmd({
 },
 async(conn, mek, m,{from, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply}) => {
 try{
-let menu ={
+const config = await readEnv():
+let menu = {
 main: '',
 download: '',
 group: '',
-owner: "",
+owner: '',
 convert: '',
-search: '',
+search: ''
 };
+
 for (let i = 0; i < commands.length; i++) {
 if (commands[i].pattern && !commands[i].dontAddCommandList) {
-menu[commands[i].category] += `.${commands[i].pattern}\n`;
+menu[commands[i].category] += `${config.PREFIX}${commands[i].pattern}\n`;
  }
 }
-let madeMenu = `*Hello ${pushname}*
-> *DOWNLOAD MENU*
+
+let madeMenu = `*hello ${pushname}*👨‍💻`  
+> *DOWNLOAD COMMANDS*_⬇️
 
 ${menu.download}
 
-> *MAIN MENU*
+> *MAIN COMMANDS* 📑
 
 ${menu.main}
 
-POWERED BY HANSAMAL-MD
-`
+> *GROUP COMMANDS* 👥
 
-  }catch(e){
+${menu.group}
+
+> *OWNER COMMANDS* 👨‍💻
+
+${menu.owner}
+
+> *CONVERT COMMANDS* 🔁
+
+${menu.convert}
+
+> *SEARCH COMMANDS* 🔍
+
+${menu.search}
+
+MADE BY IMALKAHANSAMALヤ  
+`
+await conn.sendMessage(from,{text:image:{url:config.ALIVE_IMG},caption:madeMenu},{quoted:mek})
+
+
+
+}catch(e){
 console.log(e)
 reply(`${e}`)
-}
-})
+                    }
