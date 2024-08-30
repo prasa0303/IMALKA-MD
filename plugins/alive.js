@@ -13,7 +13,7 @@ async(conn, mek, m, {from, quoted, body, isCmd, command, args, q, isGroup, sende
         // Send the audio message first
         await conn.sendMessage(from, {
             audio: { url: 'https://github.com/cobrs11/IMALKA-MD/raw/main/Media/Gm_A.mp3' },
-            mimetype: 'audio/mp4',
+            mimetype: 'audio/mp3',
             ptt: true
         }, { quoted: mek });
 
