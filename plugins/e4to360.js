@@ -318,7 +318,7 @@ cmd({
 async(conn, mek, m,{from, l, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply}) => {
 try{
     await conn.sendMessage(from, { react: { text: '🎆', key: mek.key }})
-    let wm = `© HANSAMAL-MD v${require("../package.json").version} (Test)\nWABOT MADE BY IMALKA HANSAMAL ッ`
+    let wm = `© HANSAMAL-MD v${require("../package.json").version} (Test)\n *BOT MADE BY IMALKA HANSAMAL*`
     let [name,link] = q.split('+')
     new Maker().Ephoto360(link, [`${name}`]).then(async res => {
         await conn.sendMessage(from, { image: await getBuffer(res.imageUrl), caption: wm }, { quoted: mek })
