@@ -14,26 +14,12 @@
 
 <p align="center">
   <a href="https://youtu.be/WcA7GZuaN0A">
-    <img alt="HANSAMAL-MD" height="300" src="https://telegra.ph/file/44826e95f6e863548e408.jpg">
-
-    
-
-![forks](https://img.shields.io/github/forks/cobrs11/IMALKA-MD?label=Forks&style=social)
-
-![stars](https://img.shields.io/github/stars/cobrs11/IMALKA-MD?style=social)
+    <img alt="HANSAMAL-MD" height="300" src="https://telegra.ph/file/44826e95f6e863548e408.jpg"
 
 
 
 
-<a href="https://www.whatsapp.com/channel/0029VajrLTH30LKXN5O5Zj04"><img src="https://img.shields.io/badge/%E2%9D%A4%EF%B8%8F%E2%80%8D%20Join%20Our%20WhatsApp%20Channel%F0%9F%91%A8%E2%80%8D%F0%9F%92%BB-green" alt="📎 Join Our WhatsApp Channel" width="300"></a>
-
-
-
-## MY YT CHANNEL
-
-[![Youtube](https://telegra.ph/file/eebe86c26e98ffeae39ea.jpg)](https://youtube.com/@IMALKAHANSAMAL) 
-
-</details>
+<a href="https://www.whatsapp.com/channel/0029VajrLTH30LKXN5O5Zj04"><img src="https://img.shields.io/badge/%E2%9D%A4%EF%B8%8F%E2%80%8D%20Join%20Our%20WhatsApp%20Channel%F0%9F%91%A8%E2%80%8D%F0%9F%92%BB-green" alt="📎 Join Our WhatsApp Channel"
 
 
 
@@ -52,7 +38,7 @@
 
 2. ## DEPLOY BY SESSION ID (WHATSAPP LOG WITH PAIR CODE)
 
-<a href='https://qrweb-pmpu.onrender.com/' target="_blank"><img alt='Get Session ID' src='https://img.shields.io/badge/%F0%9F%9A%80%EF%B8%8F%E2%80%8D%20GET%F0%9F%93%8B%20YOUR%20WHATSAPP%20PAIR%20CODE%F0%9F%91%A8%E2%80%8D%F0%9F%92%BB-blue' width="400" height="50" alt="Deploy bot"/></a>
+<a href='https://qrweb-5oyr.onrender.com' target="_blank"><img alt='Get Session ID' src='https://img.shields.io/badge/%F0%9F%9A%80%EF%B8%8F%E2%80%8D%20GET%F0%9F%93%8B%20YOUR%20WHATSAPP%20PAIR%20CODE%F0%9F%91%A8%E2%80%8D%F0%9F%92%BB-blue' width="400" height="50" alt="Deploy bot"/></a>
 
 <hr>
 
