@@ -27,7 +27,7 @@
     "api-dylux":"1.8.5",
     "@xaviabot/fb-downloader": "^1.0.14",
     "url": "^0.11.4",
-    "mongoose":"8.5.4",
+    "mongoose":"8.6.1",
     "imagemaker.js": "^2.0.4",
     "@blackamda/telegram-image-url":"1.0.0"
    }
