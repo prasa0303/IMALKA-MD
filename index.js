@@ -39,7 +39,7 @@ const port = process.env.PORT || 8000;
 
 //=============================================
 
-async function connectToWA()
+async function connectToWA() {
 //=============================================
 const {readEnv} = require('./config.cjs')
 const config = await readEnv();
