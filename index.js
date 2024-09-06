@@ -39,12 +39,9 @@ const port = process.env.PORT || 8000;
 
 //=============================================
 
-async function connectToWA() {
-// ================connect mongodb=======================
-const connectDB = require('./lib/mongodb')
-connectDB();
+async function connectToWA()
 //=============================================
-const {readEnv} = require('./lib/database')
+const {readEnv} = require('./config.cjs')
 const config = await readEnv();
 const prefix = config.PREFIX
 //========================================================
