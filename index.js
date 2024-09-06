@@ -23,13 +23,13 @@ const ownerNumber = ['94786328485']
 
 //===================SESSION-AUTH============================
 if (!fs.existsSync(__dirname + '/auth_info_baileys/creds.json')) {
-if(!config.SESSION_ID) return console.log('Please add your session to SESSION_ID env !!')
-const sessdata = config.SESSION_ID
+if(!config.SESSION_ID) return console.log('⚠️Please add your session to SESSION_ID env !!')
+const sessdata = config.SESSION_ID.replace("HANSAMAL-MD=","")
 const filer = File.fromURL(`https://mega.nz/file/${sessdata}`)
 filer.download((err, data) => {
 if(err) throw err
 fs.writeFile(__dirname + '/auth_info_baileys/creds.json', data, () => {
-console.log("BHASHI-MD SESSION ID DOWNLOADED 🔰✅")
+console.log("HANSAMAL-MD SESSION ID DOWNLOADED🥹✅")
 })})}
 
 const express = require("express");
@@ -59,15 +59,15 @@ if (lastDisconnect.error.output.statusCode !== DisconnectReason.loggedOut) {
 connectToWA()
 }
 } else if (connection === 'open') {
-console.log('⚜ BHASHI INSTALING....')
+console.log('❤️HANSAMAL INSTALING....')
 const path = require('path');
 fs.readdirSync("./plugins/").forEach((plugin) => {
 if (path.extname(plugin).toLowerCase() == ".js") {
 require("./plugins/" + plugin);
 }
 });
-console.log('COMMANDS DOWNLOADED 💌')
-console.log('BHASHI-MD CONNETED TO WA 💥💝')
+console.log('COMMANDS DOWNLOADED 🟢')
+console.log('HANSAMAL-MD CONNETED TO WA 👨‍💻✅')
 
 let up = config.START_MSG;
 
@@ -185,7 +185,7 @@ command.function(conn, mek, m,{from, l, quoted, body, isCmd, command, args, q, i
 })
 }
 app.get("/", (req, res) => {
-res.send("BASHI-MD WORKING ✅");
+res.send("HANSAMAL-MD WORKING ✅");
 });
 app.listen(port, () => console.log(`Server listening on port http://localhost:${port}`));
 setTimeout(() => {
