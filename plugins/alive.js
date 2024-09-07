@@ -1,38 +1,24 @@
 const config = require('../config')
-const { cmd, commands } = require('../command')
-const { getBuffer, getGroupAdmins, getRandom, h2k, isUrl, Json, runtime, sleep, fetchJson} = require('../lib/functions')
+const {cmd , commands} = require('../command')
 
 cmd({
     pattern: "alive",
-    react: '❤️',
-    alias: ["life"],
-    desc: desc,
+    desc: "Check bot online or no.",
     category: "main",
-    use: 'imalka',
+    react: "👋🏻",
     filename: __filename
 },
-async(conn, mek, m,{from, l, prefix, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply}) => {
-try{
-if (!q) return await reply(imgmsg)
-let wm = `© HANSAMAL-MD v${require("../package.json").version} (Test)\nWABOT MADE BY IMALKA HANSAMAL ッ`
-let buttons = [
-        {
-          "name": "quick_reply",
-          "buttonParamsJson": JSON.stringify({
-            display_text: "MENU",
-            id: `.menu`
-          })
-        },
-        {
-          "name": "quick_reply",
-          "buttonParamsJson": JSON.stringify({
-            display_text: "PING",
-            id: `.ping`
-          })
-        }
-        ];
+async(conn, mek, m, {from, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply}) => {
+    try {
+        // Send the audio message first
+        await conn.sendMessage(from, {
+            audio: { url: 'https://github.com/BhashiMD/BhashiMD/raw/main/Media/media_Gm.mp3' },
+            mimetype: 'audio/mp4',
+            ptt: true
+        }, { quoted: mek });
 
-            await conn.sendMessage(from, {
+        // Then send the image with the alive message
+        await conn.sendMessage(from, {
             image: { url: config.ALIVE_IMG },
             caption: config.ALIVE_MSG
         }, { quoted: mek });
@@ -42,4 +28,3 @@ let buttons = [
         reply(`Error: ${e}`);
     }
 })
-
