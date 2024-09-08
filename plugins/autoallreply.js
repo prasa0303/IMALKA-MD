@@ -1,1 +1,61 @@
-const _0x48a150=_0x302d;function _0x302d(_0xe6cdc5,_0x28b0dc){const _0x5dd203=_0x5dd2();return _0x302d=function(_0x302dff,_0x170a6d){_0x302dff=_0x302dff-0x7e;let _0x2801d5=_0x5dd203[_0x302dff];return _0x2801d5;},_0x302d(_0xe6cdc5,_0x28b0dc);}function _0x5dd2(){const _0x3e67a=['reply','parse','body','AUTO_VOICE','sendPresenceUpdate','../lib/database','readFileSync','true','1318226mpLhCm','216OCiCVu','1897640rmcvrV','join','../command','11zWWkVK','AUTO_REPLY','path','3978660eFrjSJ','audio/mpeg','470Aogzlb','sendMessage','18PoYWHz','AUTO_STICKER','toLowerCase','2538WkWtkV','utf8','IMALKA-HANSAMAL','2HZqFxy','2274Puvecq','1080313MbUpOj','190132BefUCm','220ZGdkHO','../my_data/autosticker.json','../my_data/autovoice.json'];_0x5dd2=function(){return _0x3e67a;};return _0x5dd2();}(function(_0x561e59,_0x5f155f){const _0x364356=_0x302d,_0x27c673=_0x561e59();while(!![]){try{const _0x572274=parseInt(_0x364356(0x99))/0x1*(-parseInt(_0x364356(0x9c))/0x2)+parseInt(_0x364356(0x9a))/0x3*(-parseInt(_0x364356(0x9d))/0x4)+parseInt(_0x364356(0x91))/0x5*(parseInt(_0x364356(0x96))/0x6)+parseInt(_0x364356(0x87))/0x7+parseInt(_0x364356(0x89))/0x8*(-parseInt(_0x364356(0x93))/0x9)+-parseInt(_0x364356(0x8f))/0xa*(parseInt(_0x364356(0x8c))/0xb)+parseInt(_0x364356(0x88))/0xc*(parseInt(_0x364356(0x9b))/0xd);if(_0x572274===_0x5f155f)break;else _0x27c673['push'](_0x27c673['shift']());}catch(_0x4da000){_0x27c673['push'](_0x27c673['shift']());}}}(_0x5dd2,0x97518));const fs=require('fs'),path=require(_0x48a150(0x8e)),{readEnv}=require(_0x48a150(0x84)),{cmd,commands}=require(_0x48a150(0x8b));cmd({'on':_0x48a150(0x81)},async(_0x517e30,_0x1c3c63,_0x1d8b0a,{from:_0x2585e3,body:_0x310b9a,isOwner:_0x5ca211})=>{const _0x335ea1=_0x48a150,_0x201545=path[_0x335ea1(0x8a)](__dirname,_0x335ea1(0x7e)),_0x11e808=JSON[_0x335ea1(0x80)](fs[_0x335ea1(0x85)](_0x201545,_0x335ea1(0x97)));for(const _0x2fef44 in _0x11e808){if(_0x310b9a[_0x335ea1(0x95)]()===_0x2fef44[_0x335ea1(0x95)]()){const _0x41857d=await readEnv();if(_0x41857d[_0x335ea1(0x82)]==='true'){if(_0x5ca211)return;await _0x517e30[_0x335ea1(0x83)]('recording',_0x2585e3),await _0x517e30[_0x335ea1(0x92)](_0x2585e3,{'audio':{'url':_0x11e808[_0x2fef44]},'mimetype':_0x335ea1(0x90),'ptt':!![]},{'quoted':_0x1c3c63});}}}}),cmd({'on':'body'},async(_0x3b4b54,_0x2b7421,_0x570886,{from:_0x3671c8,body:_0x1e2b62,isOwner:_0x3758ab})=>{const _0x2c8b05=_0x48a150,_0x334908=path['join'](__dirname,_0x2c8b05(0x9e)),_0x75efa1=JSON[_0x2c8b05(0x80)](fs[_0x2c8b05(0x85)](_0x334908,_0x2c8b05(0x97)));for(const _0x1111de in _0x75efa1){if(_0x1e2b62[_0x2c8b05(0x95)]()===_0x1111de[_0x2c8b05(0x95)]()){const _0x4a7c28=await readEnv();if(_0x4a7c28[_0x2c8b05(0x94)]===_0x2c8b05(0x86)){if(_0x3758ab)return;await _0x3b4b54[_0x2c8b05(0x92)](_0x3671c8,{'sticker':{'url':_0x75efa1[_0x1111de]},'package':_0x2c8b05(0x98)},{'quoted':_0x2b7421});}}}}),cmd({'on':_0x48a150(0x81)},async(_0x3a99d5,_0x160a18,_0x45528f,{from:_0x5e09c5,body:_0x500296,isOwner:_0x362c4e})=>{const _0x32109e=_0x48a150,_0x38d09c=path[_0x32109e(0x8a)](__dirname,'../my_data/autoreply.json'),_0x5cfebc=JSON[_0x32109e(0x80)](fs[_0x32109e(0x85)](_0x38d09c,_0x32109e(0x97)));for(const _0x3de5a3 in _0x5cfebc){if(_0x500296[_0x32109e(0x95)]()===_0x3de5a3[_0x32109e(0x95)]()){const _0x381431=await readEnv();if(_0x381431[_0x32109e(0x8d)]===_0x32109e(0x86)){if(_0x362c4e)return;await _0x45528f[_0x32109e(0x7f)](_0x5cfebc[_0x3de5a3]);}}}});
+const fs = require('fs');
+const path = require('path');
+const {readEnv} = require('../lib/database')
+const {cmd , commands} = require('../command')
+
+//auto_voice
+cmd({
+  on: "body"
+},    
+async (conn, mek, m, { from, body, isOwner }) => {
+    const filePath = path.join(__dirname, '../my_data/autovoice.json');
+    const data = JSON.parse(fs.readFileSync(filePath, 'utf8'));
+    for (const text in data) {
+        if (body.toLowerCase() === text.toLowerCase()) {
+            const config = await readEnv();
+            if (config.AUTO_VOICE === 'true') {
+                //if (isOwner) return;        
+                await conn.sendPresenceUpdate('recording', from);
+                await conn.sendMessage(from, { audio: { url: data[text] }, mimetype: 'audio/mpeg', ptt: true }, { quoted: mek });
+            }
+        }
+    }                
+});
+
+//auto sticker 
+cmd({
+  on: "body"
+},    
+async (conn, mek, m, { from, body, isOwner }) => {
+    const filePath = path.join(__dirname, '../my_data/autosticker.json');
+    const data = JSON.parse(fs.readFileSync(filePath, 'utf8'));
+    for (const text in data) {
+        if (body.toLowerCase() === text.toLowerCase()) {
+            const config = await readEnv();
+            if (config.AUTO_STICKER === 'true') {
+                //if (isOwner) return;        
+                await conn.sendMessage(from,{sticker: { url : data[text]},package: 'IMALKA-HANSAMAL'},{ quoted: mek })   
+            
+            }
+        }
+    }                
+});
+
+//auto reply 
+cmd({
+  on: "body"
+},    
+async (conn, mek, m, { from, body, isOwner }) => {
+    const filePath = path.join(__dirname, '../my_data/autoreply.json');
+    const data = JSON.parse(fs.readFileSync(filePath, 'utf8'));
+    for (const text in data) {
+        if (body.toLowerCase() === text.toLowerCase()) {
+            const config = await readEnv();
+            if (config.AUTO_REPLY === 'true') {
+                //if (isOwner) return;        
+                await m.reply(data[text])
+            
+            }
+        }
+    }                
+});                  
