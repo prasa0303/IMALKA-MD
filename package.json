@@ -30,6 +30,7 @@
     "imagemaker.js": "^2.0.4",
     "@blackamda/telegram-image-url":"1.0.0",
     "mongoose": "8.5.4",
-    "mumaker":"2.0.0"
+    "mumaker":"2.0.0",
+    "ruhend-scraper":"7.0.6"
    }
 }
