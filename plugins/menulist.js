@@ -1,7 +1,7 @@
-const os = require('os');
-const { tlang, botpic,cmd, prefix, runtime,Config,formatp } = require('../lib')
-const axios = require('axios')
-const speed = require('performance-now')
+const config = require('../config')
+const {cmd , commands} = require('../command')
+const os = require("os")
+const {runtime} = require('../lib/functions')
 
 
 cmd({
