@@ -17,7 +17,7 @@ const url = data.url
     
     
 let desc = `
-*HANSAMAL-MD SONG DOWNLOADER*
+*~HANSAMAL SONG DOWNLOADER~*
 
 🎵 *Song Found!* 
 
@@ -69,7 +69,7 @@ const url = data.url
     
     
 let desc = `
-*HANSAMAL-MD VIDEO DOWNLOADER*
+*~HANSAMAL VIDEO DOWNLOADER~*
 
 🎥 *Video Found!* 
 
