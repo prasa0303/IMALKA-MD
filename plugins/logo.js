@@ -25,7 +25,7 @@ try{
     if (!q.includes('+')) return await reply(imgmsg3)
     let [name,name2] = q.split('+')
     new Maker().Ephoto360('https://en.ephoto360.com/make-your-own-free-fire-youtube-banner-online-free-562.html', [`${name}`,`${name2}`]).then(async res => {
-        await conn.sendMessage(from, { image: await getBuffer(res.imageUrl), caption: config.FOOTER }, { quoted: mek })
+        await conn.sendMessage(from, { image: await getBuffer(res.imageUrl), caption: "HANSAMAL-MD"}, { quoted: mek })
         await conn.sendMessage(from, { react: { text: '✔', key: mek.key }})
     })
 } catch (e) {
