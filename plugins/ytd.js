@@ -35,7 +35,6 @@ let desc = `
 *💻 GitHub:* https://github.com/cobrs11/HANSAMAL-MD/
 `
 
-await conn.sendMessage(from,{document: {url:downloadUrl},mimetype:"audio/mpeg",fileName:data.title + ".mp3",caption:"*© HANSAMAL-MD*"},{quoted:mek})
 
 
 //download audio
@@ -44,7 +43,8 @@ let down = await fg.yta(url)
 let downloadUrl = down.dl_url
 
 //send audio message
-await conn.sendMessage(from,{audio: {url:downloadUrl},mimetype:"audio/mpeg",fileName:data.title + ".mp3",caption:"*HANSAMAL-MD*"},{quoted:mek})
+
+await conn.sendMessage(from,{document: {url:downloadUrl},mimetype:"audio/mpeg",fileName:data.title + ".mp3",caption:"*© HANSAMAL-MD*"},{quoted:mek})
 
 }catch(e){
 console.log(e)
