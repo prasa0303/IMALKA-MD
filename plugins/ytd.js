@@ -35,7 +35,7 @@ let desc = `
 *💻 GitHub:* https://github.com/cobrs11/HANSAMAL-MD/
 `
 
-
+await conn.sendMessage(from,{image:{url: data.thumbnail},caption:desc},{quoted:mek});
 
 //download audio
 
