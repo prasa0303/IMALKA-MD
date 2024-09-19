@@ -1,24 +1,51 @@
 const config = require('../config')
 const {cmd , commands} = require('../command')
+const os = require("os")
+const {runtime} = require('../lib/functions')
 
 cmd({
     pattern: "alive",
-    desc: "Check bot online or no.",
-    category: "main",
+    desc: "To Check the bot online or no.",
     react: "👋🏻",
+    category: "main",
     filename: __filename
 },
-async(conn, mek, m, {from, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply}) => {
-    try {
+async(conn, mek, m,{from, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply}) => {
+try{
 
-        // Then send the image with the alive message
-        await conn.sendMessage(from, {
-            image: { url: config.ALIVE_IMG },
-            caption: config.ALIVE_MSG
-        }, { quoted: mek });
+const voice = {
+    alive: 'my_data/autoreply_hi.mp3'
+}
 
-    } catch(e) {
-        console.log(e);
-        reply(`Error: ${e}`);
-    }
+let aliveMessage = ` 
+~*HANSAMAL-MD BOT ALIVE NOW !*~
+
+*Hey there!* 
+
+ >  *HANSAMAL-MD WhatsApp Bot* is up and running!
+           Runtime : ${runtime(process.uptime())}
+ > 🛠️ *Created by:* IMALKA HANSAMAL
+ 
+*Here's what I can do:* 
+💿 *Download Songs & Videos* 
+📰 *Fetch Latest News* 
+🎭 *Entertain with Fun Commands* 
+🔧 *Manage Groups* 
+
+> *Stay connected and enjoy the services!* 
+
+
+*© HANSAMAL- MD* 
+*💻 GitHub:* github.com/cobrs11/HANSAMAL-MD `
+
+await conn.sendMessage(from, { audio: { url: voice.alive }, mimetype: 'audio/mp4', ptt: true }, { quoted: mek })
+
+return await conn.sendMessage(from,{image: {url: config.ALIVE_IMG},caption:aliveMessage},{quoted: mek})
+
+}catch(e){
+console.log(e)
+reply(`${e}`)
+}
 })
+
+
