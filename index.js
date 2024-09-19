@@ -29,7 +29,7 @@ const filer = File.fromURL(`https://mega.nz/file/${sessdata}`)
 filer.download((err, data) => {
 if(err) throw err
 fs.writeFile(__dirname + '/auth_info_baileys/creds.json', data, () => {
-console.log("Session downloaded ✅")
+console.log("🔒 Session Successfully Loaded✅")
 })})}
 
 const express = require("express");
@@ -47,7 +47,7 @@ const {readEnv} = require('./lib/database')
 const config = await readEnv();
 const prefix = config.PREFIX
 //========================================================
-console.log("Connecting wa bot 🧬...");
+console.log("👨‍💻 HANSAMAL-MD WA bot 🧬...");
 const { state, saveCreds } = await useMultiFileAuthState(__dirname + '/auth_info_baileys/')
 var { version } = await fetchLatestBaileysVersion()
 
@@ -67,17 +67,17 @@ if (lastDisconnect.error.output.statusCode !== DisconnectReason.loggedOut) {
 connectToWA()
 }
 } else if (connection === 'open') {
-console.log('😼 Installing... ')
+console.log('WAIT... ')
 const path = require('path');
 fs.readdirSync("./plugins/").forEach((plugin) => {
 if (path.extname(plugin).toLowerCase() == ".js") {
 require("./plugins/" + plugin);
 }
 });
-console.log('Plugins installed successful ✅')
-console.log('Bot connected to whatsapp ✅')
+console.log('Bot installed successful ✅')
+console.log('📍 HANSAMAL-MD CONNECTED Successful️✅')
 
-let up = `Wa-BOT connected successful ✅\n\nPREFIX: ${prefix}`;
+let up = `📍 HANSAMAL-MD CONNECTED Successful️✅\n\n◦ *Github:* https://github.com/cobrs11/HANSAMAL-MD\n\n\n◦ *CHANNEL:*https://whatsapp.com/channel/0029VajrLTH30LKXN5O5Zj04`;
 
 conn.sendMessage(ownerNumber + "@s.whatsapp.net", { image: { url: `https://telegra.ph/file/900435c6d3157c98c3c88.jpg` }, caption: up })
 
