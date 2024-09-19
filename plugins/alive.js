@@ -20,7 +20,7 @@ const voice = {
 let aliveMessage = ` 
 ~*HANSAMAL-MD BOT ALIVE NOW !*~
 
-*Hey there!* 
+*Hey there!* : ${pushname}
 
  >  *HANSAMAL-MD WhatsApp Bot* is up and running!
            Runtime : ${runtime(process.uptime())}
