@@ -67,7 +67,9 @@ const url = data.url
     
     
 let desc = `
-🎬 ~*HANSAMAL-MD VIDEO DOWNLOADER~* 🎬
+
+
+🎬 ~HANSAMAL-MD VIDEO DOWNLOADER~ 🎬
 
 
 🎥 *Video Found!* 
@@ -95,3 +97,9 @@ let downloadUrl = down.dl_url
 
 //send video message
 await conn.sendMessage(from,{video: {url:downloadUrl},mimetype:"video/mp4"},{quoted:mek})
+
+}catch(e){
+console.log(e)
+  reply('${e}')
+}
+})
