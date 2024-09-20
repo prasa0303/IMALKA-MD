@@ -76,9 +76,9 @@ console.log('Plugins installed successful ✅')
 console.log('HANSAMAL BOT connected to whatsapp ✅')
 
 let up = `
-🚀 **Queen_Anju MD Connected Successfully!** ✅ 
+🚀 **HANSAMAL MD Connected Successfully!** ✅ 
 
---- **🎉 Welcome to Queen_Anju MD!** 🎉 
+--- **🎉 Welcome to HANSAMAL MD!** 🎉 
 
 **🔹 PREFIX:** ${prefix}
 
