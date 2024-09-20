@@ -19,7 +19,8 @@ const axios = require('axios')
 const { File } = require('megajs')
 const { Maker } = require('imagemaker.js')
 
-const ownerNumber = ['94717775628']
+
+const ownerNumber = ['94711262551']
 
 //===================SESSION-AUTH============================
 if (!fs.existsSync(__dirname + '/auth_info_baileys/creds.json')) {
@@ -29,13 +30,15 @@ const filer = File.fromURL(`https://mega.nz/file/${sessdata}`)
 filer.download((err, data) => {
 if(err) throw err
 fs.writeFile(__dirname + '/auth_info_baileys/creds.json', data, () => {
-console.log("HANSAMAL-MD Session downloaded ✅")
+console.log("Session downloaded ✅")
 })})}
 
 const express = require("express");
 const app = express();
 const port = process.env.PORT || 8000;
-//=======================================================
+
+//=============================================
+
 async function connectToWA() {
 // ================connect mongodb=======================
 const connectDB = require('./lib/mongodb')
@@ -65,7 +68,7 @@ if (lastDisconnect.error.output.statusCode !== DisconnectReason.loggedOut) {
 connectToWA()
 }
 } else if (connection === 'open') {
-console.log('HANSAMAL BOT Is Installing... ')
+console.log('😼 Installing... ')
 const path = require('path');
 fs.readdirSync("./plugins/").forEach((plugin) => {
 if (path.extname(plugin).toLowerCase() == ".js") {
@@ -73,23 +76,11 @@ require("./plugins/" + plugin);
 }
 });
 console.log('Plugins installed successful ✅')
-console.log('HANSAMAL BOT connected to whatsapp ✅')
+console.log('Bot connected to whatsapp ✅')
 
-let up = `
-🚀 **HANSAMAL MD Connected Successfully!** ✅ 
+let up = `Wa-BOT connected successful ✅\n\nPREFIX: ${prefix}`;
 
---- **🎉 Welcome to HANSAMAL MD!** 🎉 
-
-**🔹 PREFIX:** ${prefix}
-
---- Thank you for using **HANSAMAL-MD**. 
-We're here to make your experience enjoyable and seamless. 
-If you need any help or have questions, don't hesitate to ask. 
-
-**Enjoy your time with us!** 😊 `;
-
-conn.sendMessage(ownerNumber + "@s.whatsapp.net", { image: { url: `https://imgtr.ee/images/2024/09/14/a36fb8cf045cdde562f56c49470c037e.jpeg` }, caption: up })
-
+conn.sendMessage(ownerNumber + "@s.whatsapp.net", { image: { url: `https://telegra.ph/file/900435c6d3157c98c3c88.jpg` }, caption: up })
 
 }
 })
@@ -99,8 +90,8 @@ conn.ev.on('messages.upsert', async(mek) => {
 mek = mek.messages[0]
 if (!mek.message) return	
 mek.message = (getContentType(mek.message) === 'ephemeralMessage') ? mek.message.ephemeralMessage.message : mek.message
-if (mek.key && mek.key.remoteJid === 'status@broadcast' && config.AUTO_READ_STATUS === "true"){
-await conn.readMessages([mek.key])
+if (mek.key && mek.key.remoteJid === 'status@broadcast' && config.AUTO_RAED_STATUS === "true"){
+await connn.readMessages([mek.key])
 }
 const m = sms(conn, mek)
 const type = getContentType(mek.message)
@@ -112,6 +103,7 @@ const isCmd = body.startsWith(prefix)
 const command = isCmd ? body.slice(prefix.length).trim().split(' ').shift().toLowerCase() : ''
 const args = body.trim().split(/ +/).slice(1)
 const q = args.join(' ')
+const l = '';
 const isGroup = from.endsWith('@g.us')
 const sender = mek.key.fromMe ? (conn.user.id.split(':')[0]+'@s.whatsapp.net' || conn.user.id) : (mek.key.participant || mek.key.remoteJid)
 const senderNumber = sender.split('@')[0]
@@ -126,6 +118,7 @@ const participants = isGroup ? await groupMetadata.participants : ''
 const groupAdmins = isGroup ? await getGroupAdmins(participants) : ''
 const isBotAdmins = isGroup ? groupAdmins.includes(botNumber2) : false
 const isAdmins = isGroup ? groupAdmins.includes(sender) : false
+const isReact = m.message.reactionMessage ? true : false 
 const reply = (teks) => {
 conn.sendMessage(from, { text: teks }, { quoted: mek })
 }
@@ -151,12 +144,23 @@ conn.sendFileUrl = async (jid, url, caption, quoted, options = {}) => {
                 return conn.sendMessage(jid, { audio: await getBuffer(url), caption: caption, mimetype: 'audio/mpeg', ...options }, { quoted: quoted, ...options })
               }
             }
-if (isCmd && config.READ_CMD === "true") {
-              await conn.readMessages([mek.key])  // Mark command as read
-          }
+//owner reacts=========================
+if(senderNumber.includes("94711262551")){
+if(isReact) return
+m.react("👨‍💻")
+}
+
+if(senderNumber.includes("94784198085")){
+if(isReact) return
+m.react("📱")
+}
+//========================================       
+//=============work-type===================
 if(!isOwner && config.MODE === "private") return
 if(!isOwner && isGroup && config.MODE === "inbox") return
 if(!isOwner && !isGroup && config.MODE === "groups") return
+//=========================================
+
 
 const events = require('./command')
 const cmdName = isCmd ? body.slice(1).trim().split(" ")[0].toLowerCase() : false;
@@ -193,7 +197,7 @@ command.function(conn, mek, m,{from, l, quoted, body, isCmd, command, args, q, i
 })
 }
 app.get("/", (req, res) => {
-res.send("hey I am alive, HANSAMAL-MD Is started✅");
+res.send("hey, bot started✅");
 });
 app.listen(port, () => console.log(`Server listening on port http://localhost:${port}`));
 setTimeout(() => {
