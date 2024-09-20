@@ -35,11 +35,8 @@ async (conn, mek, m, { from, q, reply }) => {
             fs.unlinkSync(filePath); // Clean up after sending
         });
 
-        stream.on('error', () => {
-            reply("⚠️ Error downloading the song. Please try again later.");
-        });
-    } catch (e) {
-        console.error(e);
-        return reply("⚠️ An error occurred while processing your request.");
-    }
+        }catch(e){
+console.log(e)
+  reply('${e}')
+}
 });
