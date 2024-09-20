@@ -17,7 +17,7 @@ const util = require('util')
 const { sms,downloadMediaMessage } = require('./lib/msg')
 const axios = require('axios')
 const { File } = require('megajs')
-const prefix = '.'
+const { Maker } = require('imagemaker.js')
 
 const ownerNumber = ['94717775628']
 
@@ -37,6 +37,15 @@ const app = express();
 const port = process.env.PORT || 8000;
 
 //=============================================
+async function connectToWA() {
+// ================connect mongodb=======================
+const connectDB = require('./lib/mongodb')
+connectDB();
+//=============================================
+const {readEnv} = require('./lib/database')
+const config = await readEnv();
+const prefix = config.PREFIX
+//=========================
 
 async function connectToWA() {
 console.log("Connecting HANSAMAL BOT 🧬...");
@@ -82,7 +91,8 @@ If you need any help or have questions, don't hesitate to ask.
 
 **Enjoy your time with us!** 😊 `;
 
-conn.sendMessage(config.BOT_NUMBER + "@s.whatsapp.net", { image: { url: `https://imgtr.ee/images/2024/09/14/a36fb8cf045cdde562f56c49470c037e.jpeg` }, caption: up })
+conn.sendMessage(ownerNumber + "@s.whatsapp.net", { image: { url: `https://telegra.ph/file/900435c6d3157c98c3c88.jpg` }, caption: up })
+
 
 }
 })
