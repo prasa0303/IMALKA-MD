@@ -17,7 +17,7 @@ const voice = {
     alive: 'my_data/autoreply_hi.mp3'
 }
 
-let aliveMessage = ` 
+const aliveMessage = ` 
 ~*HANSAMAL-MD BOT ALIVE NOW !*~
 
 *Hey there!* : ${pushname} !
@@ -40,7 +40,7 @@ let aliveMessage = `
 
 await conn.sendMessage(from, { audio: { url: voice.alive }, mimetype: 'audio/mp4', ptt: true }, { quoted: mek })
 
-return await conn.sendMessage(from,{image: {url: config.ALIVE_IMG},caption:aliveMessage},{quoted: mek})
+await conn.sendMessage(from,{image: {url: config.ALIVE_IMG},caption:aliveMessage},{quoted: mek})
 
 }catch(e){
 console.log(e)
