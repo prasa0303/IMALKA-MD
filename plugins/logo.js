@@ -6,7 +6,7 @@ cmd({
     pattern: "logo",
     react: '🎭',
     alias: ["logo1","ephoto360","ephoto"],
-    desc: desc,
+    desc: "desc",
     category: "other",
     use: '.ephoto360 hansamal',
     filename: __filename
