@@ -16,7 +16,7 @@ async (conn, mek, m, { from, q, reply }) => {
         if (!songName) return reply("❗ Please provide a song name. Usage: .song [song name]");
 
         // YouTube search API
-        const searchUrl = `https://www.googleapis.com/youtube/v3/search?part=snippet&type=video&q=${encodeURIComponent(songName)}&key=YOUR_YOUTUBE_API_KEY`;
+        const searchUrl = `https://www.googleapis.com/youtube/v3/search?part=snippet&type=video&q=${encodeURIComponent(songName)}&key=AIzaSyDuxukbFXfs4RITT_W_3U5ZyHL2kzfqcJ0`;
         
         const response = await axios.get(searchUrl);
         const videoId = response.data.items[0]?.id?.videoId;
