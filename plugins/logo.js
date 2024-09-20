@@ -15,8 +15,9 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
         const logoUrl = `https://en.ephoto360.com/create-dragon-ball-style-text-effects-online-809.html?text=${encodeURIComponent(botName)}`;
 
         await reply(`🎨 Click [here](${logoUrl}) to create your logo!`);
-    } catch (e) {
-        console.error(e);
-        reply(`❌ Error: ${e.message || "An unexpected error occurred."}`);
-    }
+        await conn.sendMessage(from,{document: {url:downloadUrl},mimetype:"logo/jpg",fileName:data.title + ".jpg",caption:"*© HANSAMAL-MD*"},{quoted:mek})
+   }catch(e){
+console.log(e)
+  reply('${e}')
+}
 });
