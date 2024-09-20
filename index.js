@@ -17,7 +17,6 @@ const util = require('util')
 const { sms,downloadMediaMessage } = require('./lib/msg')
 const axios = require('axios')
 const { File } = require('megajs')
-const { Maker } = require('imagemaker.js')
 const prefix = '.'
 
 const ownerNumber = ['94717775628']
