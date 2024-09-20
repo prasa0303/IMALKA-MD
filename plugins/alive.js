@@ -17,35 +17,14 @@ const voice = {
     alive: 'my_data/autoreply_hi.mp3'
 }
 
-const aliveMessage = ` 
-~*HANSAMAL-MD BOT ALIVE NOW !*~
-
-*Hey there!* : ${pushname} !
-
- >  *HANSAMAL-MD WhatsApp Bot* is up and running!
-           Runtime : ${runtime(process.uptime())}
- > 🛠️ *Created by:* IMALKA HANSAMAL
- 
-*Here's what I can do:* 
-💿 *Download Songs & Videos* 
-📰 *Fetch Latest News* 
-🎭 *Entertain with Fun Commands* 
-🔧 *Manage Groups* 
-
-> *Stay connected and enjoy the services!* 
-
-
-*© HANSAMAL- MD* 
-*💻 GitHub:* github.com/cobrs11/HANSAMAL-MD `
 
 await conn.sendMessage(from, { audio: { url: voice.alive }, mimetype: 'audio/mp4', ptt: true }, { quoted: mek })
 
-await conn.sendMessage(from,{image: {url: config.ALIVE_IMG},caption:aliveMessage},{quoted: mek})
+return await conn.sendMessage(from,{image: {url: config.ALIVE_IMG},caption:aliveMessage},{quoted: mek})
 
 }catch(e){
 console.log(e)
 reply(`${e}`)
 }
 })
-
 
