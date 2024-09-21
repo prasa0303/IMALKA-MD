@@ -11,15 +11,29 @@
       "required": true
     },  
 
-    "ALIVE_IMG": {
-      "description": "Put your alive img here.",
+    "MONGODB": {
+      "description": "your mondodb url.",
       "required": true
     },
     
-    "ALIVE_MSG": {
-      "description": "Put your alive msg here.",
+    "AUTO_REPLY": {
+      "description": "TRUE OR FLASE.",
       "required": true
-    }   
+    },
+      
+    "AUTO_VOICE": {
+      "description": "TRUE OR FLASE.",
+      "required": true
+    },
+      
+    "AUTO_STICKER": {
+      "description": "TRUE OR FLASE.",
+      "required": true
+    },
+   "MODE": {
+      "description": "PUBLIC OR PRIVATE.",
+      "required": true
+    } 
 },
 
      "buildpacks": [
