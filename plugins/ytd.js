@@ -53,25 +53,26 @@ HANSAMAL-MD SONG DOWNLOADER
     }
 });
 
-//====================video_dl=======================
-
+// Command for downloading videos
 cmd({
     pattern: "dvideo",
-    desc: "To download videos.",
+    desc: "To download videos in 720p.",
     react: "🎥",
     category: "download",
     filename: __filename
-},
-async(conn, mek, m,{from, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply}) => {
-try{
-if(!q) return reply("Please give me a url or title")  
-const search = await yts(q)
-const data = search.videos[0];
-const url = data.url
-    
-    
-let desc = `
-*HANSAMAL-MD VIDEO DOWNLOADER*
+}, async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply }) => {
+    try {
+        if (!q) return reply("Please provide a URL or title.");
+
+        const search = await yts(q);
+        const data = search.videos[0];
+
+        if (!data) return reply("No video found. Please try a different query.");
+
+        const url = data.url;
+
+        let desc = `
+HANSAMAL-MD VIDEO DOWNLOADER
 
 🎥 *Video Found!* 
 
@@ -81,26 +82,27 @@ let desc = `
 ➥ *Uploaded On:* ${data.ago} 
 ➥ *Link:* ${data.url} 
 
-🎬 *Enjoy the video brought to you by* *HANSAMAL_MD*! 
+🎬 *Enjoy the video brought to you by* *HANSAMAL BOT*! 
 
 > *Created with ❤️ by IMALKA HANSAMAL* 
 
-> *© HANSAMAL- MD* 
-*💻 GitHub:* https://github.com/cobrs11/HANSAMAL-MD/
-`
+> *© HANSAMAL-MD* 
+*💻 GitHub:* github.com/cobrs11/HANSAMAL-MD  
+`;
 
-await conn.sendMessage(from,{image:{url: data.thumbnail},caption:desc},{quoted:mek});
+        await conn.sendMessage(from, { image: { url: data.thumbnail }, caption: desc }, { quoted: mek });
 
-//download video
+        // Download video in 720p
+        let videoInfo = await fg.getInfo(url);
+        let format = videoInfo.formats.find(f => f quality === '720p' && f.hasAudio && f.hasVideo);
 
-let down = await fg.ytv(url)
-let downloadUrl = down.dl_url
+        if (!format) return reply("720p video format not available.");
 
-//send video message
-await conn.sendMessage(from,{document: {url:downloadUrl},mimetype:"video/mp4",fileName:data.title + ".mp4",caption:"*© HANSAMAL-MD*"},{quoted:mek})
+        // Send video message
+        await conn.sendMessage(from, { video: { url: format.url }, mimetype: "video/mp4" }, { quoted: mek });
 
-}catch(e){
-console.log(e)
-  reply('${e}')
-}
-})
+    } catch (e) {
+        console.error(e);
+        reply(`An error occurred: ${e.message || e}`);
+    }
+});
