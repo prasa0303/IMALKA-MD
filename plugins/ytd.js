@@ -1,5 +1,5 @@
-const { cmd, commands } = require('../command');
-const fg = require('ytdl-core');
+const { cmd, commands } = require('../command'); 
+const ytdl = require('ytdl-core');
 const yts = require('yt-search');
 
 cmd({
@@ -41,17 +41,17 @@ HANSAMAL-MD SONG DOWNLOADER
         await conn.sendMessage(from, { image: { url: data.thumbnail }, caption: desc }, { quoted: mek });
 
         // Download audio
-        let down = await fg.yta(url);
-        let downloadUrl = down.dl_url;
+        const audioStream = ytdl(url, { quality: 'highestaudio', filter: format => format.hasAudio });
 
         // Send audio message
-        await conn.sendMessage(from, { audio: { url: downloadUrl }, mimetype: "audio/mpeg" }, { quoted: mek });
+        await conn.sendMessage(from, { audio: { url: audioStream }, mimetype: "audio/mpeg" }, { quoted: mek });
 
     } catch (e) {
         console.error(e);
         reply(`An error occurred: ${e.message || e}`);
     }
 });
+
 
 // Command for downloading videos
 cmd({
