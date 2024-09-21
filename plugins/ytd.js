@@ -1,5 +1,6 @@
 const {cmd , commands} = require('../command')
 const fg = require('ytdl-core')
+const fs = require('fs')
 const yts = require('yt-search')
 cmd({
     pattern: "dsong",
@@ -39,17 +40,16 @@ await conn.sendMessage(from,{image:{url: data.thumbnail},caption:desc},{quoted:m
 
 //download audio
 
-let down = await fg.yta(url)
-let downloadUrl = down.dl_url
+// Example of choosing a video format.
+ytdl(url, { filter: format => format.container === 'mp3' })
 
 //send audio message
 
 await conn.sendMessage(from,{document: {url:downloadUrl},mimetype:"audio/mpeg",fileName:data.title + ".mp3",caption:"*© HANSAMAL-MD*"},{quoted:mek})
 
-}catch(e){
-console.log(e)
-  reply('${e}')
-}
+let info = await ytdl.getInfo(videoID);
+let audioFormats = ytdl.filterFormats(info.formats, 'audioonly');
+console.log('Formats with only audio: ' + audioFormats.length);
 })
 
 //====================video_dl=======================
