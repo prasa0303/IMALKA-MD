@@ -46,9 +46,8 @@ HANSAMAL-MD SONG DOWNLOADER
         // Send audio message
         await conn.sendMessage(from, { audio: { url: audioStream }, mimetype: "audio/mpeg" }, { quoted: mek });
 
-    } catch (e) {
-        console.error(e);
-        reply(`An error occurred: ${e.message || e}`);
+    } catch (error) {
+        console.error("Error generating response:", error);
     }
 });
 
