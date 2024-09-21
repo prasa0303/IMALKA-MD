@@ -46,10 +46,11 @@ HANSAMAL-MD SONG DOWNLOADER
         // Send audio message
         await conn.sendMessage(from, { audio: { url: audioStream }, mimetype: "audio/mpeg" }, { quoted: mek });
 
-    } catch (error) {
-        console.error("Error generating response:", error);
+     } catch (e) {
+        console.log(e)
+        reply(`${e}`)
     }
-});
+})
 
 
 // Command for downloading videos
@@ -101,7 +102,7 @@ HANSAMAL-MD VIDEO DOWNLOADER
         await conn.sendMessage(from, { video: { url: format.url }, mimetype: "video/mp4" }, { quoted: mek });
 
     } catch (e) {
-        console.error(e);
-        reply(`An error occurred: ${e.message || e}`);
+        console.log(e)
+        reply(`${e}`)
     }
-});
+})
