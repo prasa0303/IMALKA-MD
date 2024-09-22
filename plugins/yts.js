@@ -47,7 +47,7 @@ await conn.sendMessage(from,{audio: {url:downloadUrl},mimetype:"audio/mpeg"},{qu
 
 }catch(e){
 console.log(e)
-  reply('${e}')
+  reply(`${e}`)
 }
 })
 
@@ -100,6 +100,6 @@ await conn.sendMessage(from,{video: {url:downloadUrl},mimetype:"video/mp4"},{quo
 
 }catch(e){
 console.log(e)
-  reply('${e}')
+  reply(`${e}`)
 }
 })
