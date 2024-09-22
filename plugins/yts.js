@@ -1,7 +1,15 @@
-const ytdl = require('ytdl-core');
-
-const downloadSong = async (url) => {
-    try {
+const {cmd , commands} = require('../command')
+const fg = require('ytdl-core')
+const yts = require('yt-search')
+cmd({
+    pattern: "song",
+    desc: "To download songs.",
+    react: "🎵",
+    category: "download",
+    filename: __filename
+},
+async(conn, mek, m,{from, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply}) => {
+try{
         const info = await ytdl.getInfo(url);
         const format = ytdl.chooseFormat(info.formats, { quality: 'highestaudio' });
 
